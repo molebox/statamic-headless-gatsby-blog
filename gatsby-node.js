@@ -32,12 +32,17 @@ exports.createPages = ({actions, graphql}) => {
 
         // Loop through the posts and create the post pages
         posts.forEach((post, index) => {
+        // Get the previous and next posts so that we can navigate between them
+        const previous = index === post.length - 1 ? null : posts[index + 1]
+        const next = index === 0 ? null : posts[index - 1];
             // Create the page using the slug
             createPage({
                 path: post.slug,
                 component: postLayoutTemplate,
                 context: {
-                    slug: post.slug
+                    slug: post.slug,
+                    previous,
+                    next
                 }
             })
         })
