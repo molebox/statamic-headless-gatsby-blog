@@ -4,7 +4,7 @@ import { graphql, Link as GatsbyLink } from 'gatsby';
 
 const Index = ({data}) => {
     const posts = data.allCollectionPosts.nodes;
-    console.log({posts})
+
     return (
         <Container h="100vh" centerContent>
             <Flex direction="column" h="100%" w="100%" align="center" justify="center">
@@ -31,6 +31,9 @@ export const query = graphql`
                 slug
                 title
                 content
+                images {
+                permalink
+            }
             }
         }
     }

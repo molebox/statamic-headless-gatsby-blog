@@ -13,6 +13,9 @@ exports.createPages = ({actions, graphql}) => {
                   slug
                   title
                   content
+                  images {
+                    permalink
+                }
                 }
             }
         }
