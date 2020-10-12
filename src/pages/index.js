@@ -21,7 +21,7 @@ const Index = ({ data }) => {
         align="center"
         justify="center"
       >
-        <Text fontSize="6xl" mb={6}>
+        <Text as="h1" fontSize="6xl" mb={6}>
           Statamic Blog
         </Text>
         <UnorderedList>

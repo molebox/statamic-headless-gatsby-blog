@@ -16,6 +16,7 @@
     "gatsby-source-statamic": "^0.1.1",
     "prettier": "^2.1.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+    "react-dom": "^16.13.1",
+    "react-markdown": "^4.3.1"
   }
 }

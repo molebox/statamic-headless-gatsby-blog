@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, Link as GatsbyLink } from "gatsby";
 import { Container, Text, Image, Link, Flex } from "@chakra-ui/core";
+import ReactMarkdown from 'react-markdown/with-html';
 
 const PostLayout = ({ data, pageContext }) => {
   const { title, content, images } = data.collectionPosts;
@@ -13,7 +14,10 @@ const PostLayout = ({ data, pageContext }) => {
         {title}
       </Text>
       <Image my={6} src={permalink} alt={title} />
-      <Text as="p" dangerouslySetInnerHTML={{ __html: content }} />
+
+      <ReactMarkdown source={content} escapeHtml={false}/>
+      {/* <Text as="p" dangerouslySetInnerHTML={{ __html: content }} /> */}
+
       <Flex mt={6} w="100%" borderTop="solid 1px" p={3}>
         <Flex w="100ch" justify="space-evenly">
           {previous && (
